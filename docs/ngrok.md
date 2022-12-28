@@ -1,6 +1,6 @@
-## Videolify P2P - Ngrok
+## Wetogether.Care P2P - Ngrok
 
-If you want to expose Videolify from your `Local PC` to outside in `HTTPS`, you need to do 1 thing
+If you want to expose Wetogether.Care from your `Local PC` to outside in `HTTPS`, you need to do 1 thing
 
 Edit the Ngrok part on `.env` file
 

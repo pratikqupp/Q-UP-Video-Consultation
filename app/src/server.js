@@ -316,7 +316,7 @@ function getMeetingURL(host) {
   );
 }
 
-// end of Videolify API v1
+// end of Wetogether.Care API v1
 
 // not match any of page before, so 404 not found
 app.get("*", function (req, res) {

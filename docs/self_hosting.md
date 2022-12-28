@@ -25,7 +25,6 @@ Quick start
 
 ```bash
 # Clone Videolify repo
-$ git clone https://github.com/Jaideep25/Videolify
 # Go to videolify dir
 $ cd videolify
 # Copy .env.template to .env and edit it if needed
@@ -155,7 +154,6 @@ Check Your Videolify instance: https://your.domain.name
 
 ## Update script
 
-In order to have always Your Videolify updated to the latest, we going to create a script
 
 ```bash
 # Create a file p2pUpdate.sh
@@ -169,7 +167,6 @@ If you use `PM2`, paste this:
 ```bash
 #!/bin/bash
 
-cd videolify
 git pull
 pm2 stop app/src/server.js
 sudo npm install
@@ -183,14 +180,6 @@ If you use `Docker`, paste this:
 ```bash
 #!/bin/bash
 
-cd videolify
-git pull
-docker-compose down
-docker-compose build
-docker images |grep '<none>' |awk '{print $3}' |xargs docker rmi
-docker-compose up -d
-```
-
 ---
 
 Make the script executable
@@ -199,9 +188,7 @@ Make the script executable
 $ chmod +x p2pUpdate.sh
 ```
 
-Follow the commits of the Videolify project [here](https://github.com/Jaideep25/Videolify/commits/master)
 
-To update Your Videolify instance at latest commit, execute:
 
 ```bash
 ./p2pUpdate.sh

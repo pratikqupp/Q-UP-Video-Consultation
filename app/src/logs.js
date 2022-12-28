@@ -11,7 +11,7 @@ const options = {
   colors: true,
 };
 module.exports = class Logs {
-  constructor(appName = "Videolify", debugOn = true) {
+  constructor(appName = "Wetogether.Care", debugOn = true) {
     this.appName = colors.yellow(appName);
     this.debugOn = debugOn;
     this.timeStart = Date.now();

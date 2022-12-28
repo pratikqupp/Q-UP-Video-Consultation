@@ -5,7 +5,7 @@
 ██      ██      ██ ██      ██  ██ ██    ██    
  ██████ ███████ ██ ███████ ██   ████    ██   
 
-Videolify Browser Client
+Wetogether.Care Browser Client
 Copyright (C) 2022 Jaideep25 <jaideepch@outlook.com>
 
 This program is free software: you can redistribute it and/or modify
@@ -7399,7 +7399,7 @@ function handleKickedOut(config) {
 }
 
 /**
- * Videolify about info
+ * Wetogether.Care about info
  */
 function showAbout() {
  
