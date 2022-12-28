@@ -1164,7 +1164,7 @@ function welcomeUser() {
     } else if (result.isDenied) {
       let message = {
         email: "",
-        subject: "Please join our Videolify conference",
+        subject: "Please join our Wetogether.Care conference",
         body: "Click to join: " + myRoomUrl,
       };
       shareRoomByEmail(message);
@@ -4092,7 +4092,7 @@ async function shareRoomUrl() {
       } else if (result.isDenied) {
         let message = {
           email: "",
-          subject: "Please join our Videolify conference",
+          subject: "Please join our Wetogether.Care conference",
           body: "Click to join: " + myRoomUrl,
         };
         shareRoomByEmail(message);
