@@ -26,17 +26,6 @@ dependencies: {
 }
 */
 
-/**
- * Videolify P2P - Server component
- *
- * @link    GitHub: https://github.com/Jaideep25/Videolify
- * @link    Live demo: https://videolify.up.railway.app or https://videolify.herokuapp.com
- * @license For open source use: AGPLv3
- * @license For commercial or closed source, contact us at jaideepch@outlook.com
- * @author  Jaideep25 - jaideepch@outlook.com
- * @version 1.0.1
- *
- */
 
 "use strict"; // https://www.w3schools.com/js/js_strict.asp
 
@@ -221,8 +210,8 @@ app.get(["/test"], (req, res) => {
   }
   /*
         http://localhost:3000/test?iceServers=[{"urls":"stun:stun.l.google.com:19302"},{"urls":"turn:openrelay.metered.ca:443","username":"openrelayproject","credential":"openrelayproject"}]
-        https://videolify.up.railway.app//test?iceServers=[{"urls":"stun:stun.l.google.com:19302"},{"urls":"turn:openrelay.metered.ca:443","username":"openrelayproject","credential":"openrelayproject"}]
-        https://videolify.herokuapp.com/test?iceServers=[{"urls":"stun:stun.l.google.com:19302"},{"urls":"turn:openrelay.metered.ca:443","username":"openrelayproject","credential":"openrelayproject"}]
+       https://wetogether-care.onrender.com/test?iceServers=[{"urls":"stun:stun.l.google.com:19302"},{"urls":"turn:openrelay.metered.ca:443","username":"openrelayproject","credential":"openrelayproject"}]
+        https://wetogether-care.onrender.com/test?iceServers=[{"urls":"stun:stun.l.google.com:19302"},{"urls":"turn:openrelay.metered.ca:443","username":"openrelayproject","credential":"openrelayproject"}]
     */
   res.sendFile(views.stunTurn);
 });
@@ -233,8 +222,8 @@ app.get("/join/", (req, res) => {
     log.debug("Request Query", req.query);
     /* 
             http://localhost:3000/join?room=test&name=videolify&audio=1&video=1&screen=1&notify=1
-            https://videolify.up.railway.app/join?room=test&name=videolify&audio=1&video=1&screen=1&notify=1
-            https://videolify.herokuapp.com/join?room=test&name=videolify&audio=1&video=1&screen=1&notify=1
+            https://wetogether-care.onrender.com/join?room=test&name=videolify&audio=1&video=1&screen=1&notify=1
+            https://wetogether-care.onrender.com/join?room=test&name=videolify&audio=1&video=1&screen=1&notify=1
         */
     const { room, name, audio, video, screen, notify } = req.query;
     // all the params are mandatory for the direct room join
@@ -250,17 +239,14 @@ app.get("/join/*", (req, res) => {
   res.sendFile(views.client);
 });
 
-/**
-    Videolify API v1
-    For api docs we use: https://swagger.io/
-*/
+
 
 // request meeting room endpoint
 app.post([apiBasePath + "/meeting"], (req, res) => {
   // check if user was authorized for the api call
   let authorization = req.headers.authorization;
   if (authorization != api_key_secret) {
-    log.debug("Videolify get meeting - Unauthorized", {
+    log.debug("Wetogether.Care get meeting - Unauthorized", {
       header: req.headers,
       body: req.body,
     });
@@ -273,17 +259,13 @@ app.post([apiBasePath + "/meeting"], (req, res) => {
   res.end(JSON.stringify({ meeting: meetingURL }));
 
   // log.debug the output if all done
-  log.debug("Videolify get meeting - Authorized", {
+  log.debug("Wetogether.Care get meeting - Authorized", {
     header: req.headers,
     body: req.body,
     meeting: meetingURL,
   });
 });
 
-/*
-    Videolify Slack app v1
-    https://api.slack.com/authentication/verifying-requests-from-slack
-*/
 
 //Slack request meeting room endpoint
 app.post("/slack", (req, res) => {
