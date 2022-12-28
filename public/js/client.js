@@ -120,7 +120,7 @@ const buttons = {
     showWhiteboardBtn: true,
     showFileShareBtn: true,
     showMySettingsBtn: true,
-    showAboutBtn: true, // Please keep me always true, Thank you!
+    showAboutBtn: false, // Please keep me always true, Thank you!
   },
   chat: {
     showSaveMessageBtn: true,
@@ -7402,31 +7402,7 @@ function handleKickedOut(config) {
  * Videolify about info
  */
 function showAbout() {
-  playSound("newMessage");
-
-  Swal.fire({
-    background: swalBackground,
-    position: "center",
-    title: "<strong>Videolify Made with ❤️</strong>",
-    imageAlt: "About",
-    imageUrl: aboutImg,
-    html: `
-        <br/>
-        <div id="about">
-            <b style="color:blue">Open Source</b> project on
-            <a href="https://github.com/jaideep25/videolify" target="_blank"><br/></br>
-            <img alt="Github" src="../images/github.png"></a><br/><br/>
-        </div>
-        </br>
-        <div id="author">Authors : <a href="https://github.com/Jaideep25/" target="_blank"> Jaideep25</a> & <a href="https://github.com/miroslavpejic85" target="_blank"> Miroslav Pejic</a></div>
-        `,
-    showClass: {
-      popup: "animate__animated animate__fadeInDown",
-    },
-    hideClass: {
-      popup: "animate__animated animate__fadeOutUp",
-    },
-  });
+ 
 }
 
 /**
