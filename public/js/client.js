@@ -5,7 +5,7 @@
 ██      ██      ██ ██      ██  ██ ██    ██    
  ██████ ███████ ██ ███████ ██   ████    ██   
 
-Q UP Video Consultation Browser Client
+Wetogether.Care Browser Client
 Copyright (C) 2022 Jaideep25 <jaideepch@outlook.com>
 
 This program is free software: you can redistribute it and/or modify
@@ -109,17 +109,17 @@ const className = {
 // Show desired buttons captionBtn, showSwapCameraBtn, showScreenShareBtn, showFullScreenBtn -> (auto-detected)
 const buttons = {
   main: {
-    showShareRoomBtn: true,
+    showShareRoomBtn: false,
     showAudioBtn: true,
     showVideoBtn: true,
     showScreenBtn: true,
-    showRecordStreamBtn: true,
-    showChatRoomBtn: true,
-    showCaptionRoomBtn: true,
+    showRecordStreamBtn: false,
+    showChatRoomBtn: false,
+    showCaptionRoomBtn: false,
     showMyHandBtn: true,
     showWhiteboardBtn: true,
     showFileShareBtn: true,
-    showMySettingsBtn: true,
+    showMySettingsBtn: false,
     showAboutBtn: false, // Please keep me always true, Thank you!
   },
   chat: {
@@ -278,7 +278,7 @@ let whiteboardBtn;
 let fileShareBtn;
 let mySettingsBtn;
 let aboutBtn;
-let leaveRoomBtn;
+// let leaveRoomBtn;
 // chat room elements
 let msgerDraggable;
 let msgerHeader;
@@ -442,7 +442,7 @@ function getHtmlElementsById() {
   myHandBtn = getId("myHandBtn");
   mySettingsBtn = getId("mySettingsBtn");
   aboutBtn = getId("aboutBtn");
-  leaveRoomBtn = getId("leaveRoomBtn");
+  // leaveRoomBtn = getId("leaveRoomBtn");
   // chat Room elements
   msgerDraggable = getId("msgerDraggable");
   msgerHeader = getId("msgerHeader");
@@ -574,7 +574,7 @@ function setButtonsToolTip() {
   setTippy(fileShareBtn, "Share files", "right-start");
   setTippy(mySettingsBtn, "Settings", "right-start");
   setTippy(aboutBtn, "About", "right-start");
-  setTippy(leaveRoomBtn, "Leave this room", "right-start");
+  // setTippy(leaveRoomBtn, "Leave this room", "right-start");
   // chat room buttons
   setTippy(msgerCPBtn, "Private messages", "top");
   setTippy(msgerClean, "Clean messages", "top");
@@ -912,7 +912,7 @@ function handleServerInfo(config) {
   }
 
   if (notify && peers_count == 1) {
-    welcomeUser();
+    checkShareScreen();
   } else {
     checkShareScreen();
   }
@@ -1164,7 +1164,7 @@ function welcomeUser() {
     } else if (result.isDenied) {
       let message = {
         email: "",
-        subject: "Please join our Q UP Video Consultation conference",
+        subject: "Please join our Wetogether.Care conference",
         body: "Click to join: " + myRoomUrl,
       };
       shareRoomByEmail(message);
@@ -3008,7 +3008,7 @@ function manageLeftButtons() {
   setMyFileShareBtn();
   setMySettingsBtn();
   setAboutBtn();
-  setLeaveRoomBtn();
+  // setLeaveRoomBtn();
 }
 
 /**
@@ -3457,11 +3457,11 @@ function setAboutBtn() {
 /**
  * Leave room button click event
  */
-function setLeaveRoomBtn() {
-  leaveRoomBtn.addEventListener("click", (e) => {
-    leaveRoom();
-  });
-}
+// function setLeaveRoomBtn() {
+//   leaveRoomBtn.addEventListener("click", (e) => {
+//     leaveRoom();
+//   });
+// }
 
 /**
  * Handle left buttons - status menù show - hide on body mouse move
@@ -4092,7 +4092,7 @@ async function shareRoomUrl() {
       } else if (result.isDenied) {
         let message = {
           email: "",
-          subject: "Please join our Q UP Video Consultation conference",
+          subject: "Please join our Wetogether.Care conference",
           body: "Click to join: " + myRoomUrl,
         };
         shareRoomByEmail(message);
@@ -7399,7 +7399,7 @@ function handleKickedOut(config) {
 }
 
 /**
- * Q UP Video Consultation about info
+ * Wetogether.Care about info
  */
 function showAbout() {
 
