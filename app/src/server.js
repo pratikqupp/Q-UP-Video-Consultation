@@ -4,7 +4,7 @@ http://patorjk.com/software/taag/#p=display&f=ANSI%20Regular&t=Server
 ███████ ███████ ██████  ██    ██ ███████ ██████  
 ██      ██      ██   ██ ██    ██ ██      ██   ██ 
 ███████ █████   ██████  ██    ██ █████   ██████  
-     ██ ██      ██   ██  ██  ██  ██      ██   ██ 
+     ██ ██      ██   ██  ██  ██  ██      ██   ██ 
 ███████ ███████ ██   ██   ████   ███████ ██   ██                                           
 
 dependencies: {
@@ -246,7 +246,7 @@ app.post([apiBasePath + "/meeting"], (req, res) => {
   // check if user was authorized for the api call
   let authorization = req.headers.authorization;
   if (authorization != api_key_secret) {
-    log.debug("Wetogether.Care get meeting - Unauthorized", {
+    log.debug("Q UP Video Consultation get meeting - Unauthorized", {
       header: req.headers,
       body: req.body,
     });
@@ -259,7 +259,7 @@ app.post([apiBasePath + "/meeting"], (req, res) => {
   res.end(JSON.stringify({ meeting: meetingURL }));
 
   // log.debug the output if all done
-  log.debug("Wetogether.Care get meeting - Authorized", {
+  log.debug("Q UP Video Consultation get meeting - Authorized", {
     header: req.headers,
     body: req.body,
     meeting: meetingURL,
@@ -316,7 +316,7 @@ function getMeetingURL(host) {
   );
 }
 
-// end of Wetogether.Care API v1
+// end of Q UP Video Consultation API v1
 
 // not match any of page before, so 404 not found
 app.get("*", function (req, res) {
@@ -739,12 +739,12 @@ io.sockets.on("connect", async (socket) => {
     } else {
       log.debug(
         "[" +
-          socket.id +
-          "] emit peerAction to [" +
-          peer_id +
-          "] from room_id [" +
-          room_id +
-          "]"
+        socket.id +
+        "] emit peerAction to [" +
+        peer_id +
+        "] from room_id [" +
+        room_id +
+        "]"
       );
 
       await sendToPeer(peer_id, sockets, "peerAction", {
@@ -766,12 +766,12 @@ io.sockets.on("connect", async (socket) => {
 
     log.debug(
       "[" +
-        socket.id +
-        "] kick out peer [" +
-        peer_id +
-        "] from room_id [" +
-        room_id +
-        "]"
+      socket.id +
+      "] kick out peer [" +
+      peer_id +
+      "] from room_id [" +
+      room_id +
+      "]"
     );
 
     await sendToPeer(peer_id, sockets, "kickOut", {
@@ -799,12 +799,12 @@ io.sockets.on("connect", async (socket) => {
 
     log.debug(
       "[" +
-        socket.id +
-        "] Peer [" +
-        peer_name +
-        "] send file to room_id [" +
-        room_id +
-        "]",
+      socket.id +
+      "] Peer [" +
+      peer_name +
+      "] send file to room_id [" +
+      room_id +
+      "]",
       {
         peerName: file.peerName,
         fileName: file.fileName,
@@ -830,12 +830,12 @@ io.sockets.on("connect", async (socket) => {
 
     log.debug(
       "[" +
-        socket.id +
-        "] Peer [" +
-        peer_name +
-        "] send fileAbort to room_id [" +
-        room_id +
-        "]"
+      socket.id +
+      "] Peer [" +
+      peer_name +
+      "] send fileAbort to room_id [" +
+      room_id +
+      "]"
     );
     await sendToRoom(room_id, socket.id, "fileAbort");
   });
@@ -866,12 +866,12 @@ io.sockets.on("connect", async (socket) => {
     if (peer_id) {
       log.debug(
         "[" +
-          socket.id +
-          "] emit videoPlayer to [" +
-          peer_id +
-          "] from room_id [" +
-          room_id +
-          "]",
+        socket.id +
+        "] emit videoPlayer to [" +
+        peer_id +
+        "] from room_id [" +
+        room_id +
+        "]",
         logMe
       );
 

@@ -1,6 +1,6 @@
-## Wetogether.Care P2P - Ngrok
+## Q UP Video Consultation P2P - Ngrok
 
-If you want to expose Wetogether.Care from your `Local PC` to outside in `HTTPS`, you need to do 1 thing
+If you want to expose Q UP Video Consultation from your `Local PC` to outside in `HTTPS`, you need to do 1 thing
 
 Edit the Ngrok part on `.env` file
 

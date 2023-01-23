@@ -1,5 +1,5 @@
 {
-  "name": "Wetogether.Care",
+  "name": "Q UP Video Consultation",
   "version": "1.0.1",
   "description": "A free WebRTC browser-based video call",
   "main": "server.js",

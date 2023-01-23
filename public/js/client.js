@@ -5,7 +5,7 @@
 ██      ██      ██ ██      ██  ██ ██    ██    
  ██████ ███████ ██ ███████ ██   ████    ██   
 
-Wetogether.Care Browser Client
+Q UP Video Consultation Browser Client
 Copyright (C) 2022 Jaideep25 <jaideepch@outlook.com>
 
 This program is free software: you can redistribute it and/or modify
@@ -1164,7 +1164,7 @@ function welcomeUser() {
     } else if (result.isDenied) {
       let message = {
         email: "",
-        subject: "Please join our Wetogether.Care conference",
+        subject: "Please join our Q UP Video Consultation conference",
         body: "Click to join: " + myRoomUrl,
       };
       shareRoomByEmail(message);
@@ -2526,11 +2526,11 @@ function setPeerAvatarImgName(videoAvatarImageId, peerName, useAvatar) {
     videoAvatarImageElement.setAttribute(
       "src",
       avatarApiUrl +
-        "?name=" +
-        peerName +
-        "&size=" +
-        avatarImgSize +
-        "&background=random&rounded=true"
+      "?name=" +
+      peerName +
+      "&size=" +
+      avatarImgSize +
+      "&background=random&rounded=true"
     );
   } else {
     videoAvatarImageElement.setAttribute("src", avatarImg);
@@ -4092,7 +4092,7 @@ async function shareRoomUrl() {
       } else if (result.isDenied) {
         let message = {
           email: "",
-          subject: "Please join our Wetogether.Care conference",
+          subject: "Please join our Q UP Video Consultation conference",
           body: "Click to join: " + myRoomUrl,
         };
         shareRoomByEmail(message);
@@ -4161,8 +4161,8 @@ function handleAudio(e, init, force = null) {
   force != null
     ? (e.className = myAudioStatus ? className.audioOn : className.audioOff)
     : (e.target.className = myAudioStatus
-        ? className.audioOn
-        : className.audioOff);
+      ? className.audioOn
+      : className.audioOff);
 
   if (init) {
     audioBtn.className = myAudioStatus ? className.audioOn : className.audioOff;
@@ -4192,8 +4192,8 @@ function handleVideo(e, init, force = null) {
   force != null
     ? (e.className = myVideoStatus ? className.videoOn : className.videoOff)
     : (e.target.className = myVideoStatus
-        ? className.videoOn
-        : className.videoOff);
+      ? className.videoOn
+      : className.videoOff);
 
   if (init) {
     videoBtn.className = myVideoStatus ? className.videoOn : className.videoOff;
@@ -5291,7 +5291,7 @@ function stripHtml(html) {
 function isHtml(str) {
   let a = document.createElement("div");
   a.innerHTML = str;
-  for (let c = a.childNodes, i = c.length; i--; ) {
+  for (let c = a.childNodes, i = c.length; i--;) {
     if (c[i].nodeType == 1) return true;
   }
   return false;
@@ -6774,11 +6774,11 @@ function handleDataChannelFileSharing(data) {
 function sendFileData(peer_id, broadcast) {
   console.log(
     "Send file " +
-      fileToSend.name +
-      " size " +
-      bytesToSize(fileToSend.size) +
-      " type " +
-      fileToSend.type
+    fileToSend.name +
+    " size " +
+    bytesToSize(fileToSend.size) +
+    " type " +
+    fileToSend.type
   );
 
   sendInProgress = true;
@@ -7399,10 +7399,10 @@ function handleKickedOut(config) {
 }
 
 /**
- * Wetogether.Care about info
+ * Q UP Video Consultation about info
  */
 function showAbout() {
- 
+
 }
 
 /**
@@ -7500,10 +7500,10 @@ function handlePeerVolume(data) {
   }
   element.style.height = volume + "%";
   remoteVideoWrap.classList.toggle('speaking');
-    setTimeout(function () {
-        element.style.backgroundColor = '#19bb5c';
-        element.style.height = '0%';
-        remoteVideoWrap.classList.toggle('speaking');
+  setTimeout(function () {
+    element.style.backgroundColor = '#19bb5c';
+    element.style.height = '0%';
+    remoteVideoWrap.classList.toggle('speaking');
   }, 700);
 }
 
@@ -7516,14 +7516,14 @@ function handleMyVolume(data) {
   let volume = data.volume + 25;
   if (!element) return;
   if (volume > 50) {
-      element.style.backgroundColor = 'orange';
+    element.style.backgroundColor = 'orange';
   }
   element.style.height = volume + '%';
   myVideoWrap.classList.toggle('speaking');
   setTimeout(function () {
-      element.style.backgroundColor = '#19bb5c';
-      element.style.height = '0%';
-      myVideoWrap.classList.toggle('speaking');
+    element.style.backgroundColor = '#19bb5c';
+    element.style.height = '0%';
+    myVideoWrap.classList.toggle('speaking');
   }, 700);
 }
 
