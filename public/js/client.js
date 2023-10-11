@@ -4533,8 +4533,6 @@ async function swapCamera() {
             await refreshMyLocalStream(camStream);
             await refreshMyStreamToPeers(camStream);
             await setMyVideoStatusTrue();
-
-            // Toggle mirror status based on the current camera
             if (camera === 'user') {
                 if (!isCamMirrored) {
                     myVideo.classList.toggle('mirror');
@@ -4547,8 +4545,6 @@ async function swapCamera() {
                 }
             }
         }
-
-        // Update the camera variable after the stream has been obtained
         camera = camera === 'user' ? 'environment' : 'user';
     } catch (err) {
         console.log('[Error] to swapping camera', err);
