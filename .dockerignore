@@ -16,6 +16,3 @@ package-lock.json
 
 # personal env
 .env
-
-#yarn
-yarn.lock

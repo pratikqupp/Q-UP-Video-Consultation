@@ -2,11 +2,11 @@
 .git
 
 # npm
-# node_modules
+node_modules
 npm-debug.log
 
 # package
-
+package-lock.json
 
 # mac
 .DS_Store
@@ -16,9 +16,8 @@ npm-debug.log
 
 # personal env
 .env
-.vercel
-
-# yarn
-yarn.lock
-
 docker-push.sh
+docker-compose.yml
+output
+env.txt
+

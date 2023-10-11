@@ -1,15 +1,20 @@
-FROM node:14-alpine
+FROM node:18-alpine 
 # https://hub.docker.com/_/node
 
-WORKDIR /usr/src/app
+WORKDIR /src
 
-COPY package*.json ./
+RUN apk add --no-cache \
+	bash \
+	vim
+
+COPY package.json .
 COPY .env.template ./.env
 
 RUN npm install
 
-COPY . .
+COPY app app
+COPY public public
 
-EXPOSE 3000
+EXPOSE 3000/tcp
 
-CMD [ "npm", "start" ] 
+CMD npm start 

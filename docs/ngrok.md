@@ -1,6 +1,8 @@
-## Wetogether.Care P2P - Ngrok
+# Q UP - Ngrok
 
-If you want to expose Wetogether.Care from your `Local PC` to outside in `HTTPS`, you need to do 1 thing
+![ngrok](../public/images/ngrok.png)
+
+If you want to expose MiroTalk P2P from your `Local PC` to outside in `HTTPS`, you need to do 1 thing
 
 Edit the Ngrok part on `.env` file
 
@@ -24,3 +26,7 @@ server_tunnel: 'https://xxxxxxxxxxxxxxxxxx.ngrok.io'
 So open it in your browser, join in the room, share it to whom you want and wait participants to join.
 
 ---
+
+## Support
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/mirotalk/mirotalk-free-secure-video-calls-chat-screen-sharing)
