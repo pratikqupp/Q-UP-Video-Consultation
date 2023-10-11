@@ -4534,17 +4534,28 @@ async function swapCamera() {
             await refreshMyStreamToPeers(camStream);
             await setMyVideoStatusTrue();
 
-            if (isCamMirrored) {
-                myVideo.classList.toggle('mirror');
+            // Toggle mirror status based on the current camera
+            if (camera === 'user') {
+                if (!isCamMirrored) {
+                    myVideo.classList.toggle('mirror');
+                    isCamMirrored = true;
+                }
+            } else {
+                if (isCamMirrored) {
+                    myVideo.classList.toggle('mirror');
+                    isCamMirrored = false;
+                }
             }
-
-            isCamMirrored = !isCamMirrored;
         }
+
+        // Update the camera variable after the stream has been obtained
+        camera = camera === 'user' ? 'environment' : 'user';
     } catch (err) {
         console.log('[Error] to swapping camera', err);
-        userLog('error', 'Error to swapping the camera ' + err);
+        userLog('error', 'Error when swapping the camera ' + err);
     }
 }
+
 
 
 /**
