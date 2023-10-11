@@ -1,7 +1,6 @@
 
 
 'use strict';
-
 const signalingServer = getSignalingServer();
 const roomId = getRoomId();
 const welcomeImg = '../images/image-placeholder.png';
