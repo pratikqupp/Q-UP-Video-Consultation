@@ -4533,6 +4533,7 @@ async function swapCamera() {
             await refreshMyLocalStream(camStream);
             await refreshMyStreamToPeers(camStream);
             await setMyVideoStatusTrue();
+
             if (camera === 'user') {
                 if (!isCamMirrored) {
                     myVideo.classList.toggle('mirror');
